@@ -684,7 +684,7 @@ atualizaHora(); setInterval(atualizaHora, 1000);
 
 // Depoimentos em vídeo: a capa carrega na hora e o player do vturb só quando a pessoa toca
 const videos = C.VIDEOS || [];
-$(".js-videos").innerHTML = videos.map((v, i) => `<figure class="video sobe" style="--d:${(i % 4) * 70}ms"><figure><img src="../../midia/depoimentos/${v.capa}" alt="" width="360" height="640" loading="lazy"><button type="button" data-i="${i}" aria-label="Assistir: ${v.titulo}"><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg></span></button></figure><figcaption><small>${v.marca}</small><b>${v.titulo}</b></figcaption></figure>`).join("");
+$(".js-videos").innerHTML = videos.map((v, i) => `<figure class="video sobe" style="--d:${(i % 4) * 70}ms"><figure><img src="../midia/depoimentos/${v.capa}" alt="" width="360" height="640" loading="lazy"><button type="button" data-i="${i}" aria-label="Assistir: ${v.titulo}"><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg></span></button></figure><figcaption><small>${v.marca}</small><b>${v.titulo}</b></figcaption></figure>`).join("");
 $(".js-videos").addEventListener("click", e => {
   const b = e.target.closest("button[data-i]"); if (!b) return;
   const v = videos[b.dataset.i], caixa = b.parentElement;
